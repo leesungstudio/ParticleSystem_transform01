@@ -11,8 +11,8 @@ class Particle {
         this.size = 12;
         this.col = 0;
     }
-    run(ax) {
-        this.update(ax);
+    run() {
+        this.update();
         this.display();
     }
     applyForce(aForce){
@@ -20,13 +20,13 @@ class Particle {
     }
 
     // Method to update position
-    update(ax) {
+    update() {
         this.velocity.add(this.acceleration);
         this.position.add(this.velocity);
         this.lifespan -= 4  ; // 알파값 줄어짐
         this.colorspan += this.velocity.x;
         this.size += 2;
-        this.col  = 300*noise(ax / 10);
+        this.col  = 300*noise( this.size );
         print( this.col );
         this.acceleration = createVector(0, 0); //가속도 초기화
     }
