@@ -7,6 +7,7 @@ class Particle {
         this.velocity = createVector(random(-1, 1), random(-1, 0));
         this.position = position.copy();
         this.lifespan = 255;
+        this.colorspan = 150;
         this.size = 12;
         this.col = 0;
     }
@@ -23,6 +24,7 @@ class Particle {
         this.velocity.add(this.acceleration);
         this.position.add(this.velocity);
         this.lifespan -= 4  ; // 알파값 줄어짐
+        this.colorspan += this.velocity.x;
         this.size += 2;
         this.col  = 300*noise(ax / 10);
         print( this.col );
@@ -33,7 +35,7 @@ class Particle {
     display() {
         noStroke();
         
-        fill(this.lifespan * 1.5,  this.lifespan , this.col , this.lifespan);
+        fill(this.colorspan * 1.5,  this.colorspan , this.col , this.colorspan);
         ellipse(this.position.x, this.position.y, this.size, this.size);
     }
 
