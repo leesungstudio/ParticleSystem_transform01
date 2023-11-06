@@ -33,7 +33,7 @@ class Particle {
     display() {
         noStroke();
         
-        fill(this.col,100 - this.col,200 - this.col, this.lifespan);
+        fill(this.lifespan * 1.5,  this.lifespan , this.col , this.lifespan);
         ellipse(this.position.x, this.position.y, this.size, this.size);
     }
 
