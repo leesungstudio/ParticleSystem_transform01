@@ -18,6 +18,7 @@ function draw() {
     s.addParticle();
     s.run();
      //s.add(wind);
+     s.add( p5.Vector.random2D());
       s.add(turbulence);
   }
 }
