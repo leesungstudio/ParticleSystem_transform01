@@ -19,7 +19,7 @@ function draw() {
     s.run();
      //s.add(wind);
      s.add( p5.Vector.random2D());
-      s.add(turbulence);
+      s.add(turbulence / 100);
   }
 }
 function mouseClicked() {
